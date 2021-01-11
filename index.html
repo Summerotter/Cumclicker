@@ -1,0 +1,28 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="interface.css" />
+	</head>
+	<body>
+        <div><center>
+        <span id="ball_amount">0</span>/<span id="capacity">100</span>(units?) of spoo build up.
+		<br><button onclick="shaftstroke()">Stroke</button><button onclick="cookieClick(1)">Milk!</button>
+		</center></div>
+        
+        <div>
+            Spoo collected: <span id="cookies">0</span> (units)?<br>
+            Cock size: <span id="cock_size">5</span> inches, adds size to spoo buildup when stroking<br>
+            Arousal: <span id="arousal">0</span> spoo per tick builds up in the balls<br>
+            Ball size: <span id="ball_size">1</span> (units?) (Spoo per tick) <br>
+        </div>
+        <br><br>
+		<div>Upgrades:
+            <br>Milker: Auto-collects 1 spoo a tick. You have <span id="milkers">0</span> Milkers. <button onclick="buyCursor()">Costs <span id="cursorCost">10</span></button>
+		
+            <br>Ball Growth +1. <button onclick="buyBalls()">Costs <span id="ballCost">11</span></button>
+            <br>Arousal Increase +1. <button onclick="buyArousal()">Costs <span id="arousalCost">10</span></button>
+            <br>Capacity Increase +100. <button onclick="buyCapacity()">Costs <span id="capacityCost">95</span></button>
+            <br>Cock Growth +1. <button onclick="buyCock()">Costs <span id="CockCost">161</span></button>
+        </div>
+        <script type="text/javascript" src="main.js"></script>
+	</body>
+</html>
