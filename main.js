@@ -41,7 +41,6 @@ function buyBalls(){
         ball_size = ball_size + 1;                                   //increases number of cursors
     	cookies = cookies - ballCost;                          //removes the cookies spent
         document.getElementById('ball_size').innerHTML = ball_size;  //updates the number of cursors for the user
-        document.getElementById('ball_size2').innerHTML = ball_size;  //updates the number of cursors for the user
         document.getElementById('cookies').innerHTML = cookies;  //updates the number of cookies for the user
     };
     var nextCost = Math.floor(10 * Math.pow(1.1,ball_size));       //works out the cost of the next cursor
@@ -49,16 +48,18 @@ function buyBalls(){
 };
 
 function buyArousal(){
-    var arousalCost = Math.floor(10 * Math.pow(1.1,arousal));     //works out the cost of this cursor
-    if(cookies >= arousalCost){                                   //checks that the player can afford the cursor
-        arousal = arousal + 1;                                   //increases number of cursors
-    	cookies = cookies - arousalCost;                          //removes the cookies spent
-        document.getElementById('arousal').innerHTML = arousal;  //updates the number of cursors for the user
-        document.getElementById('arousal2').innerHTML = arousal;  //updates the number of cursors for the user
-        document.getElementById('cookies').innerHTML = cookies;  //updates the number of cookies for the user
+    console.log(arousal);
+    var arousalCost = Math.floor(10 * Math.pow(1.1,arousal));
+    console.log(arousalCost);
+    if(cookies >= arousalCost){
+        arousal = arousal + 1;
+        cookies = cookies - arousalCost;
+        document.getElementById('arousal').innerHTML = arousal;
+        document.getElementById('cookies').innerHTML = cookies;
+        console.log(arousal)
     };
-    var nextCost = Math.floor(10 * Math.pow(1.1,arousal));       //works out the cost of the next cursor
-    document.getElementById('arousalCost').innerHTML = nextCost;  //updates the cursor cost for the user
+    var arousalCost = Math.floor(10 * Math.pow(1.1,arousal));
+    document.getElementById('arousalCost').innerHTML = arousalCost;
 };
 
 function buyCapacity(){
@@ -67,7 +68,6 @@ function buyCapacity(){
         ball_capacity = ball_capacity + 100;                                   //increases number of cursors
     	cookies = cookies - capacityCost;                          //removes the cookies spent
         document.getElementById('capacity').innerHTML = ball_capacity;  //updates the number of cursors for the user
-        document.getElementById('capacity2').innerHTML = ball_capacity;  //updates the number of cursors for the user
         document.getElementById('cookies').innerHTML = cookies;  //updates the number of cookies for the user
     };
     var nextCost = capacityCost = 0.95*ball_capacity;       //works out the cost of the next cursor
