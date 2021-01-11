@@ -6,6 +6,35 @@ var ball_amount = 0
 var milkers = 0
 var arousal = 0
 
+function load(){
+    if(localStorage.getItem('cookies')){
+        cookies = Number(localStorage.getItem('cookies'));
+        cock_size = Number(localStorage.getItem('cock_size'));
+        ball_size = Number(localStorage.getItem('ball_size'));
+        ball_capacity = Number(localStorage.getItem('ball_capacity'));
+        ball_amount = Number(localStorage.getItem('ball_amount'));
+        milkers = Number(localStorage.getItem('milkers'));
+        arousal = Number(localStorage.getItem('arousal'));
+        document.getElementById('cookies').innerHTML = cookies;
+        document.getElementById('cock_size').innerHTML = cock_size;
+        document.getElementById('ball_size').innerHTML = ball_size;
+        document.getElementById('capacity').innerHTML = ball_capacity;
+        document.getElementById('ball_amount').innerHTML = ball_amount;
+        document.getElementById('milkers').innerHTML = milkers;
+        document.getElementById('arousal').innerHTML = arousal;
+    };
+};
+
+function save(){
+    localStorage.setItem('cookies',cookies);
+    localStorage.setItem('cock_size',cock_size);
+    localStorage.setItem('ball_size',ball_size);
+    localStorage.setItem('ball_capacity',ball_capacity);
+    localStorage.setItem('ball_amount',ball_amount);
+    localStorage.setItem('milkers',milkers)
+    localStorage.setItem('arousal', arousal)
+};
+
 function cookieClick(number){
     cookies = cookies + ball_amount;
     ball_amount = 0;
@@ -109,9 +138,10 @@ function milker(){
     document.getElementById('cookies').innerHTML = cookies;
 };
     
-
+load()
 window.setInterval(function(){
 	
     ballbuildup();
 	milker();
+    save();
 }, 1000);
